@@ -1,10 +1,13 @@
 import wave
 
-waveRead = wave.open('sound.wav', 'r')
-waveBytes = waveRead.readframes(waveRead.getnframes())
+text = open("text.txt", 'r').read()
 
-file = open('output.txt', 'w')
-try:
-    file.write(waveBytes.decode('utf-8'))
-except UnicodeDecodeError:
-    file.close()
+waveFile = wave.open("sound.wav", 'wb')
+
+waveFile.setnchannels(2)
+waveFile.setframerate(44100)
+waveFile.setsampwidth(16)
+
+waveFile.readframes()
+waveFile.close()
+

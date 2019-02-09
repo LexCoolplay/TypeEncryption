@@ -14,7 +14,6 @@ unwrittenSource = source.getnframes()
 
 # Оставляем мета-данные
 if(unwrittenSound >= unwrittenSource):
-    print("Sound must be shorter than Source!")
     raise SystemExit
 else:
     key = (unwrittenSource+unwrittenSound-1)//unwrittenSound
